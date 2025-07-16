@@ -4,6 +4,6 @@
 Abrio, Mario - Read Item<br>
 Bautista, Kurt - Login <br>
 Halili, Viktor - Claim Item <br>
-Malinis, Arden <br>
+Malinis, Arden - Store Item <br>
 
 3T AY2425 - Data Structures
