@@ -2,7 +2,7 @@
 
 ## Members:
 Abrio, Mario - Read Item<br>
-Bautista, Kurt <br>
+Bautista, Kurt - Login <br>
 Halili, Viktor - Claim Item <br>
 Malinis, Arden <br>
 
