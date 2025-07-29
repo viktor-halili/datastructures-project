@@ -9,7 +9,9 @@ struct Item {
 };
 
 void writeToCSV(const std::vector<Item>& items, const std::string& filename) {
-    std::ofstream file(filename);
+    //std::ofstream file(filename);
+    std::ofstream file(filename, std::ios::app);
+
     if (!file.is_open()) {
         std::cerr << "Error opening file: " << filename << std::endl;
         return;
