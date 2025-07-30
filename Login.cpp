@@ -4,7 +4,7 @@
 #include <chrono>
 #include <map>
 #include <sstream>
-//made by kurt
+
 using namespace std;
 
 bool loginCsvOpen;
@@ -96,7 +96,7 @@ int loginverify()
             }
         } else if (loginselect == 3) {
             cout << "Thank you for using Cardinal Finds!\n";
-            return 0;
+            return 3;
         } else {
             cout << "Invalid selection. Please try again.\n";
         }
@@ -106,21 +106,54 @@ int loginverify()
 }
 
 void writelogindata(){
+
 }
 
-int main()
+int login()
 {
     int selector;
-    cout << "Welcome to Cardinal Finds\n";
+    cout << "--------------------------\n";
+    cout << "Welcome to Cardinal Finds!\n";
     loginCsvOpen = false;
     selector = loginverify();
-    cout << "Login result selector: " << selector << endl;
+    //cout << "Login result selector: " << selector << endl; // for debugging purpose
+    switch(selector){
+        case 1:
+            cout << "Proceeding as Student...\n";
+            cout << "------------------------\n";
+            
+            break;
+        case 2:
+            cout << "Proceeding as Admin...\n";
+            cout << "------------------------\n";
+            
+            break;
+        case 3: 
+            cout << "Exiting program.\n";
+            cout << "----------------\n";
+           
+            break;
+        
+            
+            
+
+    }
+    /*
     if (selector == 1) {
-        cout << "Proceeding as Student...\n";
+        
     } else if (selector == 2) {
-        cout << "Proceeding as Admin...\n";
+        
     } else {
-        cout << "Exiting program.\n";
+        
     }
     return 0;
+    */
+    return selector;
 }
+/*
+int main(){
+    int loginselect;
+    loginselect = login();
+    cout << "Loginselect: " << loginselect;
+}
+    */ // for debugging
