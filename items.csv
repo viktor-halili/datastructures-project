@@ -1,1 +1,4 @@
-id,name,description,claimStatus,claimedBy
+id,name,description,claim status,claim by
+1001,calculator,white casio found in w404,0,0
+1002,phone,samsumg found in n302,0,0
+1003,laptop,mac found in s105,0,0
