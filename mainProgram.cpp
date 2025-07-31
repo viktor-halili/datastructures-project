@@ -4,7 +4,7 @@
 #include "Claim.cpp"
 #include "Reader.cpp"
 #include "Search.cpp"
-
+#include "Store.cpp"
 
 using namespace std;
 vector<MissingItem> itemsReaded;
@@ -19,6 +19,7 @@ void adminmenu(){
         cin >> adminSelect;
         switch (adminSelect){
             case 1: //Add new item function here
+                store();
                 break;
             case 2: //Add claim item function
                 displayItems(itemsReaded);
