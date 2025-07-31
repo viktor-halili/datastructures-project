@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "login.cpp"
+#include "Login.cpp"
+#include "Claim.cpp"
 #include "Reader.cpp"
 
 
