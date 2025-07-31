@@ -29,6 +29,7 @@ void adminmenu(){
                 displayItems(itemsReaded);
                 break;
             case 4: //Add new user function
+                addNewUser();
                 break;
             case 5: //Logout
                 cout << "Logging out...\n";
