@@ -157,3 +157,27 @@ int main(){
     cout << "Loginselect: " << loginselect;
 }
     */ // for debugging
+
+    // Function to add a new user (username and password) to Login.csv
+void addNewUser() {
+    string newUsername, newPassword;
+
+    cout << "\n--- Add New User ---\n";
+    cout << "Enter new username: ";
+    cin >> newUsername;
+    cout << "Enter new password: ";
+    cin >> newPassword;
+
+    // Open Login.csv in append mode
+    ofstream outFile("Login.csv", ios::app);
+
+    if (outFile.is_open()) {
+        // Write the new user credentials to the file
+        outFile << newUsername << "," << newPassword << endl;
+        cout << "User '" << newUsername << "' added successfully to Login.csv.\n";
+        outFile.close();
+    } else {
+        cout << "Error: Could not open Login.csv to add new user. Make sure the file exists and is accessible.\n";
+    }
+    cout << "--------------------\n";
+}
