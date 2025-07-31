@@ -3,6 +3,7 @@
 #include "Login.cpp"
 #include "Claim.cpp"
 #include "Reader.cpp"
+#include "Search.cpp"
 
 
 using namespace std;
@@ -48,9 +49,13 @@ void studentmenu(){
     do {
     cout << "Enter 1 for search, Enter 2 to logout: ";
     cin >> studentSelect;
+    string keyword;
     switch (studentSelect){
         case 1://Enter function search
-
+            cout << "Enter keyword to search for: ";
+            cin.ignore();
+            getline(cin, keyword);
+            searchByKeyword(keyword);
             break;
         case 2://logout
             cout << "Logging out...\n";
