@@ -20,6 +20,8 @@ void adminmenu(){
             case 1: //Add new item function here
                 break;
             case 2: //Add claim item function
+                displayItems(itemsReaded);
+                claim();
                 break;
             case 3: //Add view item function
                 displayItems(itemsReaded);
