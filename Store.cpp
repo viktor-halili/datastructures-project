@@ -29,7 +29,8 @@ void printHeader() {
               << "\n" << std::string(84, '-') << "\n";
 }
 
-void printRow(const std::string& id, const std::string& name, const std::string& desc, const std::string& status, const std::string& claimedBy) {
+void printRow(const std::string& id, const std::string& name, const std::string& desc,
+              const std::string& status, const std::string& claimedBy) {
     std::cout << std::left
               << std::setw(6) << id
               << std::setw(18) << name
@@ -49,10 +50,10 @@ int getNextId(const std::string& filename) {
     if (!lastLine.empty()) {
         std::istringstream ss(lastLine);
         std::string idStr;
-        if (std::getline(ss, idStr, ',')) 
+        if (std::getline(ss, idStr, ','))
             return std::stoi(idStr) + 1;
     }
-    return 1001; // starting ID
+    return 1001;
 }
 
 void writeToCSV(const std::vector<Item>& items, const std::string& filename) {
@@ -60,18 +61,16 @@ void writeToCSV(const std::vector<Item>& items, const std::string& filename) {
     bool fileExists = infile.good();
     infile.close();
 
-    std::ofstream file(filename, std::ios::app);
-
-    // If file is empty, write header
     std::ifstream testFile(filename);
     bool emptyFile = (testFile.peek() == std::ifstream::traits_type::eof());
     testFile.close();
+
+    std::ofstream file(filename, std::ios::app);
 
     if (!fileExists || emptyFile) {
         file << "id,name,description,status,claimed by\n";
     }
 
-    // Write data
     for (const auto& item : items) {
         file << item.id << ","
              << item.name << ","
@@ -81,16 +80,17 @@ void writeToCSV(const std::vector<Item>& items, const std::string& filename) {
     }
 }
 
-// Function to store items
 void store() {
     std::string filename = "items.csv";
     std::vector<Item> items;
     char moreItems;
-    std::cin.ignore(); // clear input buffer
+    std::cin.ignore();
+
+    int nextId = getNextId(filename);
 
     do {
         Item item;
-        item.id = getNextId(filename);
+        item.id = nextId++; 
 
         std::cout << "Enter item name: ";
         std::getline(std::cin, item.name);
@@ -98,7 +98,6 @@ void store() {
         std::cout << "Enter item description: ";
         std::getline(std::cin, item.description);
 
-        // Status and claimedBy are set to 0 instead of "Not Claimed" and "N/A"
         item.status = "0";
         item.claimedBy = "0";
 
