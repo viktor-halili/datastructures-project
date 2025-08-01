@@ -13,8 +13,9 @@ void adminmenu(){
     int adminSelect;
     string adminTransact = "N";
     
-    itemsReaded = itemRead();
+    
     do {
+        itemsReaded = itemRead();
         cout <<"Welcome Admin!\n"<< "Enter 1 to add new item, Enter 2 to claim, 3 to view items, 4 to add new user, 5 to logout: ";
         cin >> adminSelect;
         switch (adminSelect){
